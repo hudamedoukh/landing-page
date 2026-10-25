@@ -86,6 +86,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Supported Locales
+    |--------------------------------------------------------------------------
+    |
+    | The locales visitors may switch between, along with the name shown in
+    | the language switcher and the text direction used when rendering.
+    |
+    */
+
+    'supported_locales' => [
+        'en' => ['name' => 'English', 'direction' => 'ltr'],
+        'ar' => ['name' => 'العربية', 'direction' => 'rtl'],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
     |

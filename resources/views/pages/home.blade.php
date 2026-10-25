@@ -1,12 +1,12 @@
-@extends('layouts.app', ['title' => 'Home'])
+@extends('layouts.app', ['title' => __('Home')])
 
 @section('content')
     <section class="flex flex-col items-center gap-6 text-center">
-        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{{ $headline }}</h1>
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl rtl:tracking-normal">{{ $headline }}</h1>
         <p class="max-w-2xl text-lg text-gray-600 dark:text-gray-400">{{ $tagline }}</p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="{{ route('contact') }}" class="rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition hover:bg-indigo-500">Get started</a>
-            <a href="{{ route('about') }}" class="rounded-lg border border-gray-300 px-5 py-3 font-semibold transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-900">Learn more</a>
+            <a href="{{ route('contact') }}" class="rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition hover:bg-indigo-500">{{ __('Get started') }}</a>
+            <a href="{{ route('about') }}" class="rounded-lg border border-gray-300 px-5 py-3 font-semibold transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-900">{{ __('Learn more') }}</a>
         </div>
     </section>
 

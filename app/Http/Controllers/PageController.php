@@ -12,12 +12,12 @@ class PageController extends Controller
     public function home(): View
     {
         return view('pages.home', [
-            'headline' => 'Ship ideas faster with Nimbus',
-            'tagline' => 'The all-in-one workspace that helps small teams plan, build, and launch — without the chaos.',
+            'headline' => __('Ship ideas faster with Nimbus'),
+            'tagline' => __('The all-in-one workspace that helps small teams plan, build, and launch — without the chaos.'),
             'features' => [
-                ['title' => 'Plan together', 'description' => 'Shared roadmaps keep everyone aligned on what matters next.'],
-                ['title' => 'Automate the boring', 'description' => 'Workflows that handle repetitive tasks so you can focus on building.'],
-                ['title' => 'Launch with confidence', 'description' => 'Real-time insights show exactly how your release is performing.'],
+                ['title' => __('Plan together'), 'description' => __('Shared roadmaps keep everyone aligned on what matters next.')],
+                ['title' => __('Automate the boring'), 'description' => __('Workflows that handle repetitive tasks so you can focus on building.')],
+                ['title' => __('Launch with confidence'), 'description' => __('Real-time insights show exactly how your release is performing.')],
             ],
         ]);
     }
@@ -29,11 +29,11 @@ class PageController extends Controller
     {
         return view('pages.about', [
             'foundedYear' => 2024,
-            'mission' => 'We believe great products come from focused teams. Nimbus removes the busywork so you can do your best work.',
+            'mission' => __('We believe great products come from focused teams. Nimbus removes the busywork so you can do your best work.'),
             'team' => [
-                ['name' => 'Alex Rivera', 'role' => 'Co-founder & CEO'],
-                ['name' => 'Sam Patel', 'role' => 'Co-founder & CTO'],
-                ['name' => 'Jordan Lee', 'role' => 'Head of Design'],
+                ['name' => 'Alex Rivera', 'role' => __('Co-founder & CEO')],
+                ['name' => 'Sam Patel', 'role' => __('Co-founder & CTO')],
+                ['name' => 'Jordan Lee', 'role' => __('Head of Design')],
             ],
         ]);
     }
@@ -45,9 +45,9 @@ class PageController extends Controller
     {
         return view('pages.contact', [
             'contactDetails' => [
-                'Email' => 'hello@nimbus.example',
-                'Phone' => '+1 (555) 010-2024',
-                'Address' => '123 Cloud Street, San Francisco, CA',
+                ['label' => __('Email'), 'value' => 'hello@nimbus.example', 'isLeftToRight' => true],
+                ['label' => __('Phone'), 'value' => '+1 (555) 010-2024', 'isLeftToRight' => true],
+                ['label' => __('Address'), 'value' => __('123 Cloud Street, San Francisco, CA'), 'isLeftToRight' => false],
             ],
         ]);
     }
