@@ -13,7 +13,9 @@ class ContactMessageController extends Controller
      */
     public function store(StoreContactMessageRequest $request): RedirectResponse
     {
-        ContactMessage::create($request->validated());
+        if (! $request->isFromBot()) {
+            ContactMessage::create($request->validated());
+        }
 
         return redirect()
             ->route('contact')

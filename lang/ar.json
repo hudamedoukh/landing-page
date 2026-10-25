@@ -32,5 +32,7 @@
     "(optional)": "(اختياري)",
     "Message": "الرسالة",
     "Send message": "إرسال الرسالة",
-    "Thanks for reaching out! We will get back to you soon.": "شكرًا لتواصلك معنا! سنعاود الاتصال بك قريبًا."
+    "Thanks for reaching out! We will get back to you soon.": "شكرًا لتواصلك معنا! سنعاود الاتصال بك قريبًا.",
+    "Leave this field empty": "اترك هذا الحقل فارغًا",
+    "The :attribute field must not contain invisible text direction control characters.": "يجب ألا يحتوي حقل :attribute على رموز تحكم مخفية في اتجاه النص."
 }

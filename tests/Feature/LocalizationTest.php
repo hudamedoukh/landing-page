@@ -21,18 +21,18 @@ test('the language switcher links to every supported locale', function () {
 
 test('switching the locale stores it in the session and redirects back', function () {
     $this->from(route('about'))
-        ->get(route('locale.update', 'ar'))
+        ->post(route('locale.update', 'ar'))
         ->assertRedirect(route('about'))
         ->assertSessionHas('locale', 'ar');
 });
 
 test('switching the locale without a previous page redirects home', function () {
-    $this->get(route('locale.update', 'ar'))
+    $this->post(route('locale.update', 'ar'))
         ->assertRedirect(route('home'));
 });
 
 test('unsupported locales are not found', function () {
-    $this->get('/locale/fr')->assertNotFound();
+    $this->post('/locale/fr')->assertNotFound();
 });
 
 test('an unsupported locale in the session falls back to english', function () {

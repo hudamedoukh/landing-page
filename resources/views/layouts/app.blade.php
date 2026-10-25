@@ -43,17 +43,19 @@
                     <ul class="flex gap-1 rounded-lg border border-gray-200 p-1 text-sm font-medium dark:border-gray-800" aria-label="{{ __('Language') }}">
                         @foreach ($supportedLocales as $locale => $localeDetails)
                             <li>
-                                <a
-                                    href="{{ route('locale.update', $locale) }}"
-                                    lang="{{ $locale }}"
-                                    hreflang="{{ $locale }}"
-                                    @if ($locale === $currentLocale) aria-current="true" @endif
-                                    @class([
-                                        'block rounded-md px-3 py-1 transition',
-                                        'bg-indigo-600 text-white' => $locale === $currentLocale,
-                                        'text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900' => $locale !== $currentLocale,
-                                    ])
-                                >{{ $localeDetails['name'] }}</a>
+                                <form method="POST" action="{{ route('locale.update', $locale) }}">
+                                    @csrf
+                                    <button
+                                        type="submit"
+                                        lang="{{ $locale }}"
+                                        @if ($locale === $currentLocale) aria-current="true" @endif
+                                        @class([
+                                            'block cursor-pointer rounded-md px-3 py-1 transition',
+                                            'bg-indigo-600 text-white' => $locale === $currentLocale,
+                                            'text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900' => $locale !== $currentLocale,
+                                        ])
+                                    >{{ $localeDetails['name'] }}</button>
+                                </form>
                             </li>
                         @endforeach
                     </ul>

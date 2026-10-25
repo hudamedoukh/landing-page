@@ -21,6 +21,9 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
+        // Content-Security-Policy sources cannot express IPv6 literals such as [::1],
+        // so the dev server must listen on an IPv4 address the policy can allow.
+        host: '127.0.0.1',
         watch: {
             ignored: ['**/storage/framework/views/**'],
         },

@@ -1,4 +1,5 @@
 @php
+    $honeypotField = \App\Http\Requests\StoreContactMessageRequest::HONEYPOT_FIELD;
     $inputClasses = 'mt-2 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100';
 @endphp
 
@@ -30,6 +31,11 @@
 
         <form method="POST" action="{{ route('contact.store') }}" class="mt-6 flex flex-col gap-6" novalidate>
             @csrf
+
+            <div class="sr-only" aria-hidden="true">
+                <label for="{{ $honeypotField }}">{{ __('Leave this field empty') }}</label>
+                <input type="text" id="{{ $honeypotField }}" name="{{ $honeypotField }}" tabindex="-1" autocomplete="off">
+            </div>
 
             <div class="grid gap-6 sm:grid-cols-2">
                 <div>

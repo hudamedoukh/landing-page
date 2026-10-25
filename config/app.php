@@ -94,6 +94,19 @@ return [
     |
     */
 
+    /*
+    |--------------------------------------------------------------------------
+    | Trusted Proxies
+    |--------------------------------------------------------------------------
+    |
+    | A comma-separated list of load balancer or reverse proxy IP addresses
+    | (or "*" for all) whose X-Forwarded-* headers should be trusted. Leave
+    | it empty when the application receives requests directly.
+    |
+    */
+
+    'trusted_proxies' => env('TRUSTED_PROXIES'),
+
     'supported_locales' => [
         'en' => ['name' => 'English', 'direction' => 'ltr'],
         'ar' => ['name' => 'العربية', 'direction' => 'rtl'],

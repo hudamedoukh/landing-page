@@ -14,6 +14,12 @@ class LocaleController extends Controller
     {
         $request->session()->put('locale', $locale);
 
-        return redirect()->back(fallback: route('home'));
+        $previousUrl = url()->previous();
+
+        if (parse_url($previousUrl, PHP_URL_HOST) !== $request->getHost()) {
+            return redirect()->route('home');
+        }
+
+        return redirect()->to($previousUrl);
     }
 }
